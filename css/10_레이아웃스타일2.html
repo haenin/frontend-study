@@ -43,6 +43,63 @@
             left: 100px;
             position: absolute;
         }
+
+        .vis-test {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .vis-test1 {
+            background: red;
+        }
+
+        /* visibility는 존재하지만 안보이게, display:none은 존재 자체가 x */
+        .vis-test2 {
+            background: yellow;
+            visibility: hidden;
+            visibility: visible;
+            /* 이 속성을 활용한 것으로는 대표적으로 modal창이 있다. */
+            /* display: none;  */
+        }
+        
+        .vis-test3 {
+            background: green;
+        }
+
+        .wrap {
+            position: relative;
+        }
+
+        .z-test { 
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+        }
+
+        .z-test1 {
+            background: yellow;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            z-index: 3;
+        }
+
+        .z-test2 {
+            background: red;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            z-index: 2;
+        }
+
+        .z-test3 {
+            background: green;
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            z-index: 1;
+        }
     </style>
     <title>Document</title>
 </head>
@@ -56,6 +113,27 @@
         <div class="postioning second"></div>
         <div class="postioning third"></div>
     </div>
+
+    <hr>
+
+    <h3>visibility</h3>
+    <p>페이지에 특정 영역을 보이거나 보이지 않게 하는 속성</p>
+    <!-- div.vis-test.vis-test$*3 -->
+     <!-- 클래스는 띄어쓰면 클래스의 이름이 2개가 된다 -->
+     <!-- 클래스 속성 값이 2개인 셈 (클래스만 적용됨)) -->
+     <div class="vis-test vis-test1"></div>
+     <div class="vis-test vis-test2"></div>
+     <div class="vis-test vis-test3"></div>
+     <br>
+
+     <h3>z-index</h3>
+     <p>페이지 안의 요소들을 위로 쌓는 속성</p>
+     <div class="wrap">
+     <!-- div.z-test.z-test${요소$}*3 -->
+      <div class="z-test z-test1">요소1</div>
+      <div class="z-test z-test2">요소2</div>
+      <div class="z-test z-test3">요소3</div>
+     </div>
 </body>
 
 </html>
