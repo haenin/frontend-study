@@ -18,3 +18,4 @@ console.log(+[]); // 0
 console.log(+function(){}); // NaN 
 // 이게 괴랄해서 나온게 typescript
 // 우리가 지금한건 바닐라스크립트(순수스크립트)
+
