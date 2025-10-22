@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>03. class 어트리뷰트를 활용한 요소 노드 취득</h1>
+    <!-- ul#available>li.drink*3 -->
+    <ul id="available">
+        <li class="drink coffee"><p>커피</p></li>
+        <li class="drink coke">콜라</li>
+        <li class="drink milk">우유</li>
+    </ul>
+
+    <!-- ul#unavailble>li.drink*2 -->
+    <ul id="unavailble">
+        <li class="drink">소주</li>
+        <li class="drink">맥주</li>
+    </ul>
+
+    <script>
+        const $drinks = document.getElementsByClassName('drink');
+        console.log($drinks);
+
+        [...$drinks].forEach(drink => drink.style.color ='pink');
+
+        const $coffee = document.getElementsByClassName('drink coffee'); // drink와 coffee명이 있는 친구
+        console.log($coffee);
+        // 문서 임시저장에서 사용됨 -> 백엔드에서 문자열 덩어리를 컬럼값으로 저장해놨다가 불러오기 버튼에서 백엔드에서 돌려줌
+        // inner는 시작태그와 종료태그 사이를 말한다. -> 텍스트 노드 (시작태그와 종료태그 사이)
+        console.log($coffee[0].innerHTML); // <p>커피</p> // 텍스트 노드에 태그인식 O
+        console.log($coffee[0].innerText); // 커피 // 텍스트 노드에 태그인식 X
+    </script>
+</body>
+</html>
