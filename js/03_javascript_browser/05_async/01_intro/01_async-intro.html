@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sayHello() {
+            console.log('Hello World!');
+        }
+
+    //    sayHello();
+    //    console.log('end');
+        
+        // 비동기 순서대로 실행되지만 timeout함수를 기다리자않고 다음꺼 실행
+        setTimeout(sayHello, 3000);
+        console.log('end');
+    </script>
+</body>
+</html>
