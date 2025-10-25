@@ -1,0 +1,31 @@
+<!-- 
+    다른 파일을 불러올 때는 상대경로(./) 또는 src부터의 경로인 절대경로(@)를 사용할 수 있다.
+-->
+<script setup>
+// 1. 내위치 기준 (내위치: ./)
+  // import MyComponent from './components/01_component/MyComponent.vue';
+// 2. src 기준(src = @)
+  import MyComponent from '@/components/01_component/MyComponent.vue';
+  import SlotParent from './components/02_slotintro/SlotParent.vue';
+  import NamedParent from './components/03_namedslot/NamedParent.vue';
+  import DynamicParent from './components/04_dynamicslot/DynamicParent.vue';
+</script>
+
+<template>
+  <header>
+    <div class="redColor">
+      <MyComponent></MyComponent>
+    </div>
+  </header>
+  <main>
+    <SlotParent/>
+    <NamedParent/>
+    <DynamicParent/>
+  </main>  
+</template>
+
+<style scoped>
+  .redColor {
+    color: pink;
+  }
+</style>
